@@ -22,7 +22,7 @@ public class FreeCrmTest {
 	public void setUp() throws Exception {
 		String projectlocation = system.getProperty("user.dir");
 		
-		System.setProperty("webdriver.chrome.driver", projectlocation+"/Downloads/chromedriver_win32/chromedriver.exe");
+		System.setProperty("webdriver.chrome.driver", projectlocation+"/chromedriver_win32/chromedriver.exe");
 		driver = new ChromeDriver();
 		js = (JavascriptExecutor) driver;
 		driver.get("https://www.freecrm.com/index.html");
