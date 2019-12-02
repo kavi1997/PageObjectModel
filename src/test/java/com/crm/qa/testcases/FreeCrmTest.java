@@ -20,15 +20,15 @@ public class FreeCrmTest {
 
 	@BeforeMethod
 	public void setUp() throws Exception {
-		chrome_options = Options()
-                chrome_options.add_argument('--headless')
-                chrome_options.add_argument('--no-sandbox')
-                chrome_options.add_argument('--disable-dev-shm-usage')
-                d = webdriver.Chrome('/usr/bin/chromedriver',chrome_options=chrome_options)
-                d.get('https://www.google.nl/')
-		
+		ChromeOptions options = new ChromeOptions();
+	options.addArguments("headless");
+	options.addArguments("no-sandbox");
+	options.addArguments("disable-dev-shm-usage");
+	options.addArguments("window-size=1200x600");
+	
 		System.setProperty("webdriver.chrome.driver","/usr/bin/chromedriver");
-		driver = new ChromeDriver();
+		WebDriver driver = new ChromeDriver(options);
+		
 		js = (JavascriptExecutor) driver;
 		driver.get("https://www.freecrm.com/index.html");
 	}
